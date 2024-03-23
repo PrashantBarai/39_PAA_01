@@ -18,6 +18,10 @@ steps followed :
 
 ![](out2.jpg)
 
-![confusion matix obtained](out2-1.jpg) 6. started making new Model through keras . 7. Fit train data to new model.
+![confusion matix obtained](out2-1.jpg)
+
+6. started making new Model through keras .
+
+7. Fit train data the new model.
 
 8. currently working on the new model for optimization.

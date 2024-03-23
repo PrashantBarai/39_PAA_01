@@ -14,11 +14,11 @@ steps followed :
 
 5. Fitting all the processed data to above models
 
-![output](out1.jpg)
+![output1](out1.jpg)
 
-![](out2.jpg)
+![output2](out2.jpg)
 
-![confusion matix obtained](out2-1.jpg)
+![confusion matix obtained](out3.jpg)
 
 6. started making new Model through keras .
 

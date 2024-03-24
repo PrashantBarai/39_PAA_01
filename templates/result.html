@@ -3,38 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Prediction</title>
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <h1>Text Prediction</h1>
-    <label for="text">Enter text:</label>
-    <input type="text" id="text" required>
-    <button onclick="predict()">Check</button>
-    <p id="prediction"></p>
-
-    <!-- TensorFlow.js script for loading and using the model -->
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-    <script>
-        async function predict() {
-            const text = document.getElementById('text').value;
-
-            // Load the model
-            const model = await tf.loadLayersModel('C:/Users/DELL/OneDrive/Desktop/39_PAA_01/templates/model .pkl');
-
-            // Preprocess the text input
-            const input = tf.tensor2d([[text]], [1, 1]);
-
-            // Make predictions
-            const prediction = model.predict(input);
-
-            // Get the predicted value and display it
-            const predictedValue = prediction.arraySync()[0][0];
-            document.getElementById('prediction').innerText = `Prediction: ${predictedValue}`;
-
-            // Optional: Free up memory by disposing of the tensors
-            input.dispose();
-            prediction.dispose();
-        }
-    </script>
+    <h1>Result</h1>
+    <p>Input Text:</p>
+    <ul>
+        {% for sentence, prediction in predictions %}
+            <li>{{ sentence }} - {{ prediction }}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

@@ -20,8 +20,9 @@ steps followed :
 
 ![confusion matix obtained](https://github.com/PrashantBarai/39_PAA_01/assets/144236026/96d46b60-a159-4387-bb00-034e7722a412)
 
-6. started making new Model through keras . 
+6. started making new Model through keras .
 
 7. Fit train data to new model.
 
 8. currently working on the new model for optimization.
+9. new changes

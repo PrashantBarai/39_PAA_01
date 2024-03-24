@@ -18,7 +18,7 @@ steps followed :
 
 ![output2](out2.jpg)
 
-![confusion matix obtained](out3.jpg)
+![confusion matix obtained](https://github.com/PrashantBarai/39_PAA_01/assets/144236026/96d46b60-a159-4387-bb00-034e7722a412)
 
 6. started making new Model through keras . 
 

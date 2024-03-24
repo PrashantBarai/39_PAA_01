@@ -14,11 +14,12 @@ steps followed :
 
 5. Fitting all the processed data to above models
 
-![output1](out1.jpg)
+ ![Output1](https://github.com/PrashantBarai/39_PAA_01/assets/144236026/c29479f8-790a-492f-9da6-3a5ec68a3f0b)
 
-![output2](out2.jpg)
+ ![Output2](https://github.com/PrashantBarai/39_PAA_01/assets/144236026/1990a40e-bc7e-4222-9fc6-f73a8d772a52)
 
-![confusion matix obtained](https://github.com/PrashantBarai/39_PAA_01/assets/144236026/96d46b60-a159-4387-bb00-034e7722a412)
+ ![Output3(Confusion Matix Obtained)](https://github.com/PrashantBarai/39_PAA_01/assets/144236026/5885ed41-6a8c-478b-8f87-1cc1c4ac7cb2)
+
 
 6. started making new Model through keras .
 

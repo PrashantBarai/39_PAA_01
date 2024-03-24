@@ -10,7 +10,7 @@ steps followed :
 3. Data preprocessing:
    1. Vectorizing text using TfidfVectorizer
    2. converting output of TfidfVectorizer to array , that can be given to model
-4. Using sklearn model Logistic regressor, Decision tree classifier , Extra tree classifier , etc.
+4. Using sklearn model Random Forest and getting the accuracy of 96.5%
 
 5. Fitting all the processed data to above models
 
@@ -21,9 +21,6 @@ steps followed :
  ![Output3(Confusion Matix Obtained)](https://github.com/PrashantBarai/39_PAA_01/assets/144236026/5885ed41-6a8c-478b-8f87-1cc1c4ac7cb2)
 
 
-6. started making new Model through keras .
+6. Started making new Model through keras .
 
 7. Fit train data to new model.
-
-8. currently working on the new model for optimization.
-9. new changes

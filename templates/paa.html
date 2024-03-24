@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Authenticity Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Text Authenticity Classification</h1>
+    <form action="/predict" method="post" name="f1">
+        <label for="text">Enter Text:</label><br>
+        <textarea id="text" name="text" rows="4" cols="50"></textarea><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if predictions %}
+        <h2>Result:</h2>
+        <ul>
+            {% for sentence, prediction in predictions %}
+                <li>{{ sentence }} - {{ prediction }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+    <script type="module">
+      importScripts('https://cdn.jsdelivr.net/pyodide/v0.18.1/full/pyodide.js');
+
+      async function loadPyodideAndRun() {
+        await loadPyodide({ indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.18.1/full/' });
+        console.log('Pyodide loaded successfully');
+
+        // Now you can run Python code using pyodide.runPython()
+        pyodide.runPython(`
+          import pickle
+
+          # Load the pickled model
+          with open('path_to_your_model.pkl', 'rb') as f:
+              model = pickle.load(f)
+
+          # Use the loaded model
+          prediction = model.predict(some_input_data)
+          print(prediction)
+        `);
+      }
+
+      loadPyodideAndRun();
+    </script>
+</html>
